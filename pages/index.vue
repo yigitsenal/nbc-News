@@ -3,7 +3,8 @@
     <Nav/>
     <General/>
     
-
+    
+    
   </div>
 
 
@@ -14,9 +15,10 @@
 <script>
 
 
-import Nav from '../components/Nav.vue'
 import axios from 'axios'
-import main from '../src/main.js'
+import Nav from '../components/Nav.vue'
+import main from '../src/api.js'
+
 
 export default {
   
@@ -25,15 +27,14 @@ export default {
     Nav,
   },
 
+
   data() {
     return {
       data: [],
     }
-
   },
+
 }
-
-
 
 </script>
 

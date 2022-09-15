@@ -5,6 +5,7 @@
          <img src="../images/Trending.png" alt="">
               
         </div>
+        
 
         <div class="error-alert">
             <img src="../images/Error-Alert.png" alt="">
@@ -25,17 +26,26 @@
 
         
         
-
-        
     </div>
+    
 
 
 </template>
 
 <script>
+import api from '../src/api.js'
 export default {
 
-    name: "Trending"
+    name: "General",
+    components: {
+        api
+    },
+    data() {
+        return {
+            data: [],
+        }
+    },
+   
 }
 
 </script>
