@@ -1,16 +1,21 @@
 <template>
     <div>
+        <div v-if="news != null" class="breaking-news-title">
+            <h1>{{news[0].title}}</h1>
+
+        </div>
         <div class="trending">
             
          <img src="../images/Trending.png" alt="">
               
         </div>
-        
 
-        <div class="error-alert">
-            <img src="../images/Error-Alert.png" alt="">
+        <div  class="breaking-news">
+            
+            <img src="../images/breaking-news.png" alt="">
+            
         </div>
-
+        
 
         <div class="footer-color">
             <img src="../images/footer-rectangle .png" alt="">
@@ -25,8 +30,10 @@
         </div>
 
         
+       
         
     </div>
+    
     
 
 
@@ -34,6 +41,7 @@
 
 <script>
 import api from '../src/api.js'
+import nav from '../components/Nav.vue'
 export default {
 
     name: "General",
@@ -53,12 +61,38 @@ export default {
 
 
 <style>
-.error-alert{
+.breaking-news-title {
+ 
     position: absolute;
+width: 521px;
+height: 25px;
+left: 808px;
+top: 687px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 15px;
+/* or 75% */
+
+text-align: center;
+
+color: #FFFFFF;
+
+ 
+ }
+.breaking-news{
+ 
+position: relative;
 width: 1366px;
 height: 80px;
 left: 277px;
 top: 662px;
+
+/* Main Red */
+
+background: #C31815;
 
 }
 .footer-image{
