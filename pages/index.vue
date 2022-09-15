@@ -17,7 +17,7 @@
 
 import axios from 'axios'
 import Nav from '../components/Nav.vue'
-import main from '../src/api.js'
+
 
 
 export default {

@@ -1,20 +1,20 @@
 <template>
     <div>
-        <div v-if="news != null" class="breaking-news-title">
-            <h1>{{news[0].title}}</h1>
+        <!-- <div v-if="news != null" class="breaking-news-title">
+            <h1>{{news[0].name}}</h1>
 
-        </div>
+        </div> -->
         <div class="trending">
             
          <img src="../images/Trending.png" alt="">
               
         </div>
 
-        <div  class="breaking-news">
+        <!-- <div  class="kutu">
             
-            <img src="../images/breaking-news.png" alt="">
+            <h1 v-if="news != null">{{news[0].name}}</h1>
             
-        </div>
+        </div> -->
         
 
         <div class="footer-color">
@@ -40,13 +40,13 @@
 </template>
 
 <script>
-import api from '../src/api.js'
+
 import nav from '../components/Nav.vue'
 export default {
 
     name: "General",
     components: {
-        api
+        
     },
     data() {
         return {
@@ -61,7 +61,7 @@ export default {
 
 
 <style>
-.breaking-news-title {
+.kutu h1 {
  
     position: absolute;
 width: 521px;
@@ -82,7 +82,7 @@ color: #FFFFFF;
 
  
  }
-.breaking-news{
+.kutu{
  
 position: relative;
 width: 1366px;

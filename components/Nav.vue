@@ -9,11 +9,11 @@
             </div>
 
             <div class="nav-menu-item-corona d-flex  ">
-                <h1 class="general">Genel</h1>
-                <h1 class="politics">Politika</h1>
-                <h1 class="sports">Spor</h1>
-                <h1 class="economi">Ekonomi</h1>
-                <h1 class="technology">Teknoloji</h1>
+                <a class="general" href="">Genel</a>
+                <a class="politics" href="">Politika</a>
+                <a class="sports" href="">Spor</a>
+                <a class="economi" href="">Ekonomi</a>
+                <a class="technology" href="">Teknoloji</a>
 
             </div>
 
@@ -36,8 +36,11 @@
             </div>
             <div></div>
             <div v-if="news != null" class="mask-group">
-                <img :src="news[0].image" alt="">
 
+                <a :href="news[0].url" target="_blank">
+
+                    <img :src="news[0].image" alt="" />
+                </a>
             </div>
 
             <div v-if="news != null" class="title">
@@ -52,7 +55,9 @@
 
         </div>
         <div v-if="news != null" class="card">
-            <img class="card-img-top" :src="news[1].image" alt="Card image cap">
+            <a :href="news[1].url" target="_blank">
+                <img class="card-img-top" :src="news[1].image" alt="Card image cap" />
+            </a>
             <div class="card-body">
                 <h5 class="card-title">{{news[1].name}}</h5>
                 <p class="card-text">{{news[1].description}}</p>
@@ -60,7 +65,9 @@
             </div>
         </div>
         <div v-if="news != null" class="card-2">
-            <img class="card-img-top" :src="news[2].image" alt="Card image cap">
+            <a :href="news[2].url" target="_blank">
+                <img class="card-img-top" :src="news[2].image" alt="Card image cap" />
+            </a>
             <div class="card-body">
                 <h5 class="card-title">{{news[2].name}}</h5>
                 <p class="card-text">{{news[2].description}}</p>
@@ -69,7 +76,9 @@
             </div>
         </div>
         <div v-if="news != null" class="card-3">
-            <img class="card-img-top" :src="news[3].image" alt="Card image cap">
+            <a :href="news[3].url" target="_blank">
+                <img class="card-img-top" :src="news[3].image" alt="Card image cap" />
+            </a>
             <div class="card-body">
                 <h5 class="card-title">{{news[3].name}}</h5>
                 <p class="card-text">{{news[3].description}}</p>
@@ -78,7 +87,9 @@
             </div>
         </div>
         <div v-if="news != null" class="card-4">
-            <img class="card-img-top" :src="news[4].image" alt="Card image cap">
+            <a :href="news[4].url" target="_blank">
+                <img class="card-img-top" :src="news[4].image" alt="Card image cap" />
+            </a>
             <div class="card-body">
                 <h5 class="card-title">{{news[4].name}}</h5>
                 <p class="card-text">{{news[4].description}}</p>
@@ -87,20 +98,24 @@
             </div>
         </div>
         <div v-if="news != null" class="card-5">
-            <img class="card-img-top" :src="news[5].image" alt="Card image cap">
+            <a :href="news[5].url" target="_blank">
+                <img class="card-img-top" :src="news[5].image" alt="Card image cap" />
+            </a>
             <div class="card-body">
                 <h5 class="card-title">{{news[5].name}}</h5>
                 <p class="card-text">{{news[5].description}}</p>
-                
+
 
             </div>
         </div>
         <div v-if="news != null" class="card-6">
-            <img class="card-img-top" :src="news[6].image" alt="Card image cap">
+            <a :href="news[6].url" target="_blank">
+                <img class="card-img-top" :src="news[6].image" alt="Card image cap" />
+            </a>
             <div class="card-body">
                 <h5 class="card-title">{{news[6].name}}</h5>
                 <p class="card-text">{{news[6].description}}</p>
-                
+
 
             </div>
         </div>
@@ -116,7 +131,9 @@
         </div>
         <div v-if="news != null" class="live-news">
 
-            <img class="card-img-top" :src="news[7].image" alt="Card image cap">
+            <a :href="news[7].url" target="_blank">
+                <img class="card-img-top" :src="news[7].image" alt="Card image cap" />
+            </a>
 
 
         </div>
@@ -125,10 +142,11 @@
                 <h1>Bölgesel Haberler</h1>
             </div>
         </div>
-        <div>
-            <form class="form-inline">
-                <input class="form-control " type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <div class="form">
+            <h1>Konumla İlgili Haberleri Alın</h1>
+            <form>
+                <input type="search" placeholder="Lokasyon Giriniz">
+                <button type="submit">Gönder </button>
             </form>
         </div>
         <div class="editor-pics">
@@ -138,22 +156,31 @@
         <div class="view-more">
             <button>Daha fazla</button>
         </div>
-        <!-- <div v-if="news != null" class="breaking-news-title">
+    
+        <div v-if="news != null" class="breaking-news">
+            
+            <img src="../images/breaking-news.png" alt="">
             <h1>{{news[0].name}}</h1>
-
-        </div> -->
+            
+            
+        </div>
+        <div class="breaking-news-white">
+            <img src="../images/breaking-news-white.png" alt="">
+            <h1>SON DAKİKA</h1>
+        </div>
+        
     </div>
 </template>
 
 <script>
 import axios from 'axios'
-import api from '../src/api.js'
+
 
 
 export default {
     name: "Nav",
     components: {
-        api
+
     },
 
     data: () => ({
@@ -193,60 +220,103 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-.breaking-news-title h1{
-    position: relative;
-width: 521px;
-height: 25px;
-left: 808px;
-top: 687px;
+.breaking-news-white h1{
+    
+    position: absolute;
+width: 157px;
+height: 21px;
+left: 591px;
+top: 691px;
 
 font-family: 'Poppins';
 font-style: normal;
-font-weight: 500;
-font-size: 20px;
+font-weight: 400;
+font-size: 16px;
 line-height: 15px;
-/* or 75% */
+/* or 94% */
 
 text-align: center;
 
-color: #FFFFFF;
-
+color: #C31815;
 }
-.view-more button {
+.breaking-news-white img{
+    position: absolute;
+width: 157px;
+height: 54px;
+left: 591px;
+top: 675px;
+
+border-radius: 2px;
+}
+.breaking-news img{
+    position: absolute;
+width: 1366px;
+height: 80px;
+left: 277px;
+top: 662px;
+
+/* Main Red */
+
+background: #C31815;
+}
+.breaking-news h1 {
     
     position: absolute;
-    
+    width: 600px;
+    height: 50px;
+    left: 808px;
+    top: 687px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 15px;
+    /* or 75% */
+
+    text-align: center;
+
+    color: #FFFFFF;
+
+}
+
+.view-more button {
+
+    position: absolute;
+
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 15px;
 
-width: 220px;
-height: 60px;
+    width: 220px;
+    height: 60px;
 
-left: 625px;
-top: 1954px;
-right:1075px;
-bottom: 623px;
+    left: 625px;
+    top: 1954px;
+    right: 1075px;
+    bottom: 623px;
 
-/* opacity: 0.28; */
-border: 1px solid #C31815;
-border-radius: 2px;
+    /* opacity: 0.28; */
+    border: 1px solid #C31815;
+    border-radius: 2px;
 
-color: #C31815;
-text-transform: uppercase;
+    color: #C31815;
+    text-transform: uppercase;
 }
 
-.editor-pics img{
+.editor-pics img {
     position: absolute;
-width: 15.97px;
-height: 15.99px;
-left: 445px;
-top: 2083px;
+    width: 15.97px;
+    height: 15.99px;
+    left: 445px;
+    top: 2083px;
 
 }
+
 .editor-pics h1 {
 
     position: absolute;
@@ -277,18 +347,96 @@ top: 2083px;
 
 }
 
-.form-inline {
-
+.form h1 {
     position: absolute;
-    width: 250px;
-    height: 120px;
-    left: 1293px;
-    top: 1272px;
+    
+    width: 180px;
+    height: 20px;
+    left: 20px;
+    top: 30px;
+
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+
+    color: #141414;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 370px;
+    height: 216px;
+    left: 1273px;
+    top: 1206px;
 
     background: #FFFFFF;
     mix-blend-mode: normal;
     border-radius: 2px;
 }
+
+.form input {
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 66px;
+    bottom: 90px;
+
+
+    mix-blend-mode: normal;
+    opacity: 0.6;
+    border: 1px solid #141414;
+    border-radius: 2px;
+
+}
+
+::placeholder {
+
+    width: 137px;
+    height: 26px;
+    left: 1316px;
+    top: 1288px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 26px;
+
+
+    display: flex;
+    align-items: center;
+
+    color: #141414;
+}
+
+.form button {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    left: 20px;
+    top: 146px;
+    right: 250px;
+
+
+    background: #C31815;
+    border-radius: 2px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 15px;
+}
+
+
 
 .location-news-title h1 {
 
@@ -362,7 +510,7 @@ top: 2083px;
     display: flex;
     align-items: center;
 
-    
+
     /* Main Red */
 
     color: #C31815;
@@ -378,31 +526,35 @@ top: 2083px;
     background: #C4C4C4;
     border-radius: 3px;
 }
-.card-6{
+
+.card-6 {
     position: absolute;
-width: 667px;
-height: 170px;
-left: 976px;
-top: 2123px;
-display: flex;
+    width: 667px;
+    height: 170px;
+    left: 976px;
+    top: 2123px;
+    display: flex;
 }
-.card-6 img{
+
+.card-6 img {
     width: 272px;
-height: 170px;
+    height: 170px;
 }
+
 .card-5 {
     position: absolute;
-width: 667px;
-height: 170px;
-left: 277px;
-top: 2123px;
-display: flex;
+    width: 667px;
+    height: 170px;
+    left: 277px;
+    top: 2123px;
+    display: flex;
 
 
 }
-.card-5 img{
+
+.card-5 img {
     width: 272px;
-height: 170px;
+    height: 170px;
 }
 
 .card-4 {
@@ -659,7 +811,7 @@ height: 170px;
     color: #2A2A2A;
 }
 
-.nav-menu-item-corona h1 {
+.nav-menu-item-corona a {
 
     font-family: 'Nunito Sans';
     font-style: normal;
