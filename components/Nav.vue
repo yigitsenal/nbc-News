@@ -749,9 +749,12 @@ background: #C31815;
 }
 
 .mask-group img {
+    
     position: absolute;
     max-width: 750px;
-    height: auto;
+    min-width: 750px;
+    max-height: 500px;
+    min-height: 500px;
     left: 277px;
     top: 112px;
     border-radius: 5px;
