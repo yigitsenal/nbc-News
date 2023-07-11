@@ -200,7 +200,7 @@ export default {
           headers: {
             "content-type": "application/json",
             Authorization:
-              "apikey 3gkB08WSXmyqL7OzlMxrNf:4w8QETcoP6RTBlugE8K62P",
+              "apikey .......",
           },
         })
         .then((response) => {
