@@ -1,3 +1,7 @@
+![1](https://github.com/yigitsenal/nbc-News/assets/105489265/29d0d672-53fc-495c-add0-01015803d859)
+![2](https://github.com/yigitsenal/nbc-News/assets/105489265/1c25edb2-2cb3-4ce5-bba9-6fed9abdeab6)
+![3](https://github.com/yigitsenal/nbc-News/assets/105489265/a1d83a61-e40c-45d1-9b4f-132a038a7a4e)
+
 # Challange
 
 ## Build Setup
